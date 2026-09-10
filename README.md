@@ -1,39 +1,41 @@
-# Hyungjun Kim — Portfolio
+# Hyungjun Kim — Game Programming Portfolio
 
-A lightweight static portfolio for C++ game, rendering, and engine-programming work.
+A lightweight, framework-free portfolio for C++ game, engine, rendering, and gameplay-programming work.
 
-## Current structure
+## Site structure
 
-- `index.html` — single-page portfolio and project summaries
-- `styles.css` — responsive visual system; no framework or external font dependency
-- `script.js` — mobile navigation and small progressive enhancements
-- `favicon.svg` — site icon
-- `assets/` — reserved for final screenshots, video posters, and CV PDF
+- `index.html` — Home: positioning, core profile, and short routes into the work
+- `about.html` — About: background, education, technical profile, and working principles
+- `works.html` — Works: detailed case studies for Sendou, GTL Engine, Volumetric Super Storm, and Engine Dive
+- `contact.html` — Contact: availability, email, location, GitHub, and CV status
+- `styles.css` — shared responsive design system and temporary technical illustrations
+- `script.js` — shared header, mobile navigation, footer year, and page-entry enhancement
+- `assets/` — final screenshots, short clips, showreel, CV, and social-preview media
 
-## Publishing with GitHub Pages
+## Local preview
 
-After the initial site PR is merged:
+Open `index.html` directly, or serve the folder with any simple static server. All internal navigation uses relative links so the site works both locally and on GitHub Pages.
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
+## Publishing
+
+This repository is intended to publish from the `main` branch root through GitHub Pages:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, select **Deploy from a branch**.
 3. Select `main` and `/(root)`.
-4. Save. The site will publish at <https://rocketstein.github.io/>.
+4. Save.
+
+The public site will be available at <https://rocketstein.github.io/>.
 
 ## Media still needed
 
-The first draft deliberately uses CSS-generated technical illustrations so it works before project media is supplied. Replace or supplement them with:
+The current project visuals are CSS-generated placeholders so no unapproved or misleading screenshots are used. Before applications, replace or supplement them with:
 
-- `assets/sendou-poster.webp` — action game hero still
-- `assets/sendou-demo.mp4` — 20–40 second gameplay clip
-- `assets/gtl-engine-poster.webp` — editor/rendering montage
-- `assets/storm-poster.webp` — Volumetric Super Storm hero still
-- `assets/runner-poster.webp` — infinite runner still
-- `assets/hyungjun-kim-cv.pdf` — final tailored two-page CV
+- `assets/sendou-hero.webp` or a short muted gameplay clip
+- `assets/gtl-engine-hero.webp` or an editor/rendering montage
+- `assets/super-storm-hero.webp` or a storm-authoring clip
+- `assets/engine-dive-hero.webp` or a procedural-runner clip
+- `assets/hyungjun-kim-cv.pdf`
+- `assets/social-preview.jpg`
 
-Keep each image under roughly 500 KB where practical and host longer videos on YouTube or Vimeo rather than committing large files.
-
-## Content notes
-
-- The site distinguishes personal contributions from team-wide project scope.
-- The CV download link will be added once the final PDF version is selected.
-- Project copy should remain consistent with the corresponding repository README and public product documentation.
+Prefer optimised WebP/AVIF images and externally hosted longer videos. Keep each homepage/project preview focused on the specific systems described in the accompanying text.

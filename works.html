@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected work by Hyungjun (Kenneth) Kim: a custom C++ engine, games built on it, and a published Unreal Engine rendering plugin.">
+  <meta name="theme-color" content="#080c10">
+  <meta property="og:title" content="Works — Hyungjun Kim">
+  <meta property="og:description" content="Custom engine architecture, real-time rendering, editor tooling, and playable game systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rocketstein.github.io/works.html">
+  <title>Works — Hyungjun Kim</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="page-works">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="Hyungjun Kim, home">
+      <span class="brand-mark" aria-hidden="true">HK</span>
+      <span>Hyungjun Kim</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="works.html" aria-current="page">Works</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+    <section class="page-hero page-hero-works" aria-labelledby="page-title">
+      <p class="eyebrow">Selected works</p>
+      <h1 id="page-title">Engine architecture.<br>Rendering tools. Playable games.</h1>
+      <div class="page-hero-grid">
+        <p class="page-lede">
+          Four connected case studies showing how I move from low-level C++ systems to editor workflows, visual results, and complete game features.
+        </p>
+        <p class="page-summary">
+          Team-wide scope is described for context; each project highlights the systems I personally implemented, owned, or integrated.
+        </p>
+      </div>
+    </section>
+
+    <section class="works-index" aria-label="Works index">
+      <a href="#sendou"><span>01</span>Sendou</a>
+      <a href="#gtl-engine"><span>02</span>GTL Engine</a>
+      <a href="#super-storm"><span>03</span>Volumetric Super Storm</a>
+      <a href="#engine-dive"><span>04</span>Engine Dive</a>
+    </section>
+
+    <section class="project-stack" aria-label="Project case studies">
+      <article class="project-card project-card-featured" id="sendou">
+        <div class="project-visual visual-lockon" aria-hidden="true">
+          <div class="target target-one"></div>
+          <div class="target target-two"></div>
+          <div class="lock-ring"><span></span></div>
+          <div class="hud-line hud-line-a"></div>
+          <div class="hud-line hud-line-b"></div>
+          <p>LOCK-ON / GAME FLOW / ENCOUNTER</p>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>01</span><span>Custom-engine game</span><span>4-person team</span></div>
+          <h2>Sendou — Action Combat</h2>
+          <p class="project-lede">A Sekiro-inspired action-combat game built on a custom C++ and DirectX 11 engine.</p>
+
+          <div class="role-block">
+            <p class="detail-label">My role</p>
+            <p>Game flow, lock-on targeting, UI and scene transitions, encounter direction, and gameplay integration.</p>
+          </div>
+
+          <ul class="contribution-list">
+            <li>Implemented target acquisition, directional switching, camera interpolation, automatic release conditions, and world-space lock-on markers.</li>
+            <li>Owned the runtime flow across pause, death, revival, victory, leaderboard submission, title screens, and scene transitions.</li>
+            <li>Directed the Blood Moon and boss-introduction sequence across lighting, fog, particles, BGM, cameras, UI, enemy state, and player input.</li>
+            <li>Resolved integration issues in transparent rendering, static-mesh physics queries, particle shadow submission, and ragdoll impulses.</li>
+          </ul>
+
+          <div class="tag-list" aria-label="Technologies">
+            <span>C++20</span><span>DirectX 11</span><span>HLSL</span><span>Lua</span><span>PhysX</span><span>RmlUi</span><span>FMOD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W14" target="_blank" rel="noreferrer">Detailed case study ↗</a>
+            <a href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card project-card-featured project-card-reverse" id="gtl-engine">
+        <div class="project-visual visual-engine" aria-hidden="true">
+          <div class="node node-a">WORLD</div>
+          <div class="node node-b">ACTOR</div>
+          <div class="node node-c">COMPONENT</div>
+          <div class="node node-d">RENDER</div>
+          <div class="engine-path path-a"></div>
+          <div class="engine-path path-b"></div>
+          <div class="engine-path path-c"></div>
+          <p>ENGINE / EDITOR / RUNTIME</p>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>02</span><span>Engine & editor</span><span>Rotating teams</span></div>
+          <h2>GTL Engine</h2>
+          <p class="project-lede">A source portfolio covering fourteen intensive C++ and DirectX 11 engine and game-development cycles.</p>
+
+          <div class="role-block">
+            <p class="detail-label">My contribution across the programme</p>
+            <p>Rendering architecture, editor systems, property reflection, light culling, shadow allocation, particles, collision, cameras, physics, scripting, and gameplay integration.</p>
+          </div>
+
+          <ul class="contribution-list">
+            <li>Developed systems from editor viewport and object architecture through tiled and clustered lighting, adaptive shadow atlases, reflection, particle rendering, and PhysX integration.</li>
+            <li>Worked in rotating three-to-four-person teams, taking ownership of defined subsystems while integrating with rapidly evolving shared engine code.</li>
+            <li>Applied the engine in complete playable projects, connecting rendering and runtime technology to C++ and Lua gameplay.</li>
+            <li>Documented individual work separately from team-wide scope and preserved source-focused snapshots for technical review.</li>
+          </ul>
+
+          <div class="tag-list" aria-label="Technologies">
+            <span>C++17/20</span><span>DirectX 11</span><span>HLSL</span><span>LuaJIT</span><span>PhysX</span><span>Dear ImGui</span><span>Python</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Explore all fourteen weeks ↗</a>
+            <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W07" target="_blank" rel="noreferrer">Lighting & light culling ↗</a>
+            <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W12" target="_blank" rel="noreferrer">Particle system ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card project-card-featured" id="super-storm">
+        <div class="project-visual visual-storm" aria-hidden="true">
+          <div class="storm-ring ring-a"></div>
+          <div class="storm-ring ring-b"></div>
+          <div class="storm-ring ring-c"></div>
+          <div class="storm-core"></div>
+          <div class="flow-vector vector-a"></div>
+          <div class="flow-vector vector-b"></div>
+          <div class="flow-vector vector-c"></div>
+          <p>PROFILE / FLOW / REAL-TIME CLOUDS</p>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>03</span><span>Published Unreal plugin</span><span>4-person team</span></div>
+          <h2>Volumetric Super Storm</h2>
+          <p class="project-lede">An art-directable real-time storm-authoring system extending Unreal Engine’s native Volumetric Cloud workflow.</p>
+
+          <div class="role-block">
+            <p class="detail-label">My role</p>
+            <p>Vertical-profile authoring, profile sequencing, flow-map encoding, local wind motion, and shader behaviour for stable continuous scrolling.</p>
+          </div>
+
+          <ul class="contribution-list">
+            <li>Implemented artist-facing tools for freely designing a storm’s vertical density profile and reusing the result as an asset.</li>
+            <li>Connected profile transformations to a sequencing workflow for optional changes over time.</li>
+            <li>Encoded local wind direction and strength into RGBA flow maps and applied the data to three-dimensional noise motion.</li>
+            <li>Used dual-phase sampling and blending to avoid visible overscrolling and hard reset artefacts.</li>
+          </ul>
+
+          <div class="tag-list" aria-label="Technologies">
+            <span>Unreal Engine 5.8</span><span>C++</span><span>DirectX 12</span><span>Shader Model 6</span><span>Materials</span><span>Editor tooling</span>
+          </div>
+          <div class="project-links">
+            <a href="https://teamgorogoro.github.io/" target="_blank" rel="noreferrer">Product showcase ↗</a>
+            <a href="https://www.fab.com/listings/1c2d0fea-7278-49f0-9559-3efef3076ac0" target="_blank" rel="noreferrer">Fab listing ↗</a>
+            <a href="https://github.com/Rocketstein/Epic-Volumetric-Super-Storm" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card project-card-featured project-card-reverse" id="engine-dive">
+        <div class="project-visual visual-runner" aria-hidden="true">
+          <div class="lane lane-left"></div>
+          <div class="lane lane-mid"></div>
+          <div class="lane lane-right"></div>
+          <div class="runner-block block-a"></div>
+          <div class="runner-block block-b"></div>
+          <div class="runner-player"></div>
+          <div class="gizmo"><span></span><i></i><b></b></div>
+          <p>PROCEDURAL / COLLISION / LUA</p>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>04</span><span>Custom-engine game</span><span>Team project</span></div>
+          <h2>Engine Dive — Infinite Runner</h2>
+          <p class="project-lede">A three-lane runner combining C++ engine systems with Lua gameplay and a complete title-to-results flow.</p>
+
+          <div class="role-block">
+            <p class="detail-label">My role</p>
+            <p>Collision shapes and overlap flow, procedural map chunks, obstacle systems, the Imposter Gizmo mechanic, Player Camera Manager, and Camera Modifiers.</p>
+          </div>
+
+          <ul class="contribution-list">
+            <li>Implemented box, sphere, and capsule components with every supported shape pairing and begin/end overlap delivery.</li>
+            <li>Built runtime chunk generation and recycling, probabilistic obstacle placement, and constraints that preserve a traversable lane.</li>
+            <li>Created a fake editor gizmo that captures and transforms obstacles as a hostile gameplay mechanic.</li>
+            <li>Contributed final-POV calculation, camera modifiers, shake, fade, and C++–Lua gameplay integration.</li>
+          </ul>
+
+          <div class="tag-list" aria-label="Technologies">
+            <span>C++20</span><span>DirectX 11</span><span>LuaJIT</span><span>sol2</span><span>Procedural generation</span><span>Collision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W09" target="_blank" rel="noreferrer">Detailed case study ↗</a>
+            <a href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="page-cta" aria-labelledby="works-cta-title">
+      <p class="eyebrow">Conversation</p>
+      <h2 id="works-cta-title">Interested in a system or implementation detail?</h2>
+      <p>I’m happy to discuss architecture, trade-offs, debugging decisions, and the parts I personally owned.</p>
+      <a class="text-link" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> Hyungjun Kim</p>
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>
