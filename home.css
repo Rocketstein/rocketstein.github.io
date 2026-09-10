@@ -1,4 +1,4 @@
-/* Home-only layout: concise copy with a visibly full-bleed project image. */
+/* Home-only layout: concise copy with a full-bleed project image. */
 .page-home::before {
   position: fixed;
   z-index: -2;
@@ -67,10 +67,10 @@
 .hero-image {
   position: absolute;
   z-index: 1;
-  top: -2%;
-  right: -1px;
-  bottom: -2%;
-  width: min(78vw, 1500px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(70vw, 1380px);
   margin: 0;
   overflow: hidden;
   isolation: isolate;
@@ -83,14 +83,14 @@
   background:
     linear-gradient(90deg,
       var(--bg) 0%,
-      rgba(8,12,16,.98) 8%,
-      rgba(8,12,16,.86) 22%,
-      rgba(8,12,16,.42) 39%,
-      transparent 56%),
+      rgba(8,12,16,.98) 12%,
+      rgba(8,12,16,.90) 27%,
+      rgba(8,12,16,.46) 46%,
+      transparent 66%),
     linear-gradient(180deg,
       var(--bg) 0%,
-      transparent 10%,
-      transparent 90%,
+      transparent 11%,
+      transparent 89%,
       var(--bg) 100%);
   pointer-events: none;
   content: "";
@@ -100,7 +100,7 @@
   position: absolute;
   z-index: 2;
   inset: 0;
-  background: linear-gradient(270deg, rgba(8,12,16,.06), transparent 9%);
+  background: radial-gradient(ellipse 92% 88% at 75% 50%, transparent 58%, rgba(8,12,16,.12) 76%, rgba(8,12,16,.6) 100%);
   pointer-events: none;
   content: "";
 }
@@ -110,11 +110,10 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center right;
-  opacity: .93;
-  filter: saturate(.86) brightness(.78) contrast(1.03);
+  object-fit: contain;
+  object-position: right center;
+  opacity: .9;
+  filter: saturate(.84) brightness(.76) contrast(1.03);
 }
 
 .home-footer {
@@ -156,23 +155,22 @@
     background:
       linear-gradient(180deg,
         var(--bg) 0%,
-        rgba(8,12,16,.22) 12%,
-        transparent 28%,
-        transparent 74%,
+        rgba(8,12,16,.26) 13%,
+        transparent 30%,
+        transparent 73%,
         var(--bg) 100%),
       linear-gradient(90deg,
         var(--bg) 0%,
-        transparent 10%,
-        transparent 90%,
+        transparent 12%,
+        transparent 88%,
         var(--bg) 100%);
   }
 
   .hero-image::after {
-    background: radial-gradient(ellipse 94% 88% at 50% 50%, transparent 64%, rgba(8,12,16,.1) 80%, rgba(8,12,16,.4) 100%);
+    background: radial-gradient(ellipse 92% 84% at 50% 50%, transparent 60%, rgba(8,12,16,.12) 78%, rgba(8,12,16,.5) 100%);
   }
 
   .hero-image img {
-    object-fit: contain;
     object-position: center;
   }
 }
@@ -203,7 +201,7 @@
   }
 
   .hero-image img {
-    filter: saturate(.84) brightness(.75) contrast(1.04);
+    filter: saturate(.82) brightness(.73) contrast(1.04);
   }
 }
 
