@@ -67,9 +67,9 @@
 .hero-image {
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: -1.5%;
   right: 0;
-  bottom: 0;
+  bottom: -1.5%;
   width: min(70vw, 1380px);
   margin: 0;
   overflow: hidden;
@@ -89,8 +89,10 @@
       transparent 66%),
     linear-gradient(180deg,
       var(--bg) 0%,
-      transparent 11%,
-      transparent 89%,
+      rgba(8,12,16,.70) 7%,
+      transparent 18%,
+      transparent 82%,
+      rgba(8,12,16,.70) 93%,
       var(--bg) 100%);
   pointer-events: none;
   content: "";
@@ -100,7 +102,12 @@
   position: absolute;
   z-index: 2;
   inset: 0;
-  background: radial-gradient(ellipse 92% 88% at 75% 50%, transparent 58%, rgba(8,12,16,.12) 76%, rgba(8,12,16,.6) 100%);
+  background: radial-gradient(
+    ellipse 88% 82% at 72% 50%,
+    transparent 62%,
+    rgba(8,12,16,.10) 78%,
+    rgba(8,12,16,.34) 100%
+  );
   pointer-events: none;
   content: "";
 }
@@ -155,9 +162,10 @@
     background:
       linear-gradient(180deg,
         var(--bg) 0%,
-        rgba(8,12,16,.26) 13%,
-        transparent 30%,
-        transparent 73%,
+        rgba(8,12,16,.48) 9%,
+        transparent 23%,
+        transparent 77%,
+        rgba(8,12,16,.48) 91%,
         var(--bg) 100%),
       linear-gradient(90deg,
         var(--bg) 0%,
@@ -167,7 +175,12 @@
   }
 
   .hero-image::after {
-    background: radial-gradient(ellipse 92% 84% at 50% 50%, transparent 60%, rgba(8,12,16,.12) 78%, rgba(8,12,16,.5) 100%);
+    background: radial-gradient(
+      ellipse 92% 84% at 50% 50%,
+      transparent 64%,
+      rgba(8,12,16,.08) 81%,
+      rgba(8,12,16,.30) 100%
+    );
   }
 
   .hero-image img {
