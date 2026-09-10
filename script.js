@@ -13,12 +13,28 @@ const updateHeader = () => {
   }
 };
 
+const navLines = navToggle
+  ? Array.from(navToggle.querySelectorAll('span:not(.sr-only)'))
+  : [];
+
+const setNavigationIcon = (isOpen) => {
+  if (navLines.length < 2) return;
+
+  navLines[0].style.transform = isOpen
+    ? 'translateY(3.5px) rotate(45deg)'
+    : '';
+  navLines[1].style.transform = isOpen
+    ? 'translateY(-3.5px) rotate(-45deg)'
+    : '';
+};
+
 const closeNavigation = () => {
   if (!navToggle || !nav) return;
 
   navToggle.setAttribute('aria-expanded', 'false');
   nav.classList.remove('is-open');
   document.body.classList.remove('nav-open');
+  setNavigationIcon(false);
 };
 
 const openNavigation = () => {
@@ -27,6 +43,7 @@ const openNavigation = () => {
   navToggle.setAttribute('aria-expanded', 'true');
   nav.classList.add('is-open');
   document.body.classList.add('nav-open');
+  setNavigationIcon(true);
 };
 
 updateHeader();
@@ -44,7 +61,8 @@ if (navToggle && nav) {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    if (event.key === 'Escape' && isOpen) {
       closeNavigation();
       navToggle.focus();
     }
