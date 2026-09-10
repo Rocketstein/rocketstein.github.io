@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Hyungjun (Kenneth) Kim, a C++ game and rendering programmer working on custom engines, real-time graphics, and gameplay systems.">
+  <meta name="theme-color" content="#080c10">
+  <meta property="og:title" content="Hyungjun Kim — C++ Game & Rendering Programmer">
+  <meta property="og:description" content="Custom engine, real-time rendering, editor tooling, and gameplay systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rocketstein.github.io/">
+  <title>Hyungjun Kim — C++ Game & Rendering Programmer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Hyungjun Kim, home">
+      <span class="brand-mark" aria-hidden="true">HK</span>
+      <span>Hyungjun Kim</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">C++ · real-time rendering · game systems</p>
+        <h1 id="hero-title">I build the systems<br>behind playable worlds.</h1>
+        <p class="hero-intro">
+          I’m <strong>Hyungjun “Kenneth” Kim</strong>, a Mathematics and Computer Science graduate from the University of Illinois Urbana-Champaign. I work across custom engines, rendering, editor tooling, and gameplay.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work</a>
+          <a class="button button-secondary" href="mailto:jun2020301@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="viewport-frame">
+          <div class="viewport-topbar"><span></span><span></span><span></span></div>
+          <div class="viewport-grid"></div>
+          <div class="viewport-object object-a"></div>
+          <div class="viewport-object object-b"></div>
+          <div class="viewport-reticle"><i></i></div>
+          <div class="viewport-axis"><b>X</b><b>Y</b><b>Z</b></div>
+          <div class="viewport-readout">FRAME 0164 · 60.0 FPS</div>
+        </div>
+      </div>
+
+      <div class="proof-strip" aria-label="Core profile">
+        <span><strong>B.S.</strong> Mathematics & Computer Science</span>
+        <span><strong>C++20</strong> DirectX 11 · HLSL</span>
+        <span><strong>UE 5</strong> Runtime · shaders · editor</span>
+        <span><strong>Focus</strong> Engine · rendering · gameplay</span>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">From engine architecture<br>to finished game features.</h2>
+        </div>
+        <p>
+          Four connected case studies: a custom engine platform, two games built on it, and a published Unreal Engine rendering tool.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-card-featured">
+          <div class="project-visual visual-lockon" aria-hidden="true">
+            <div class="target target-one"></div>
+            <div class="target target-two"></div>
+            <div class="lock-ring"><span></span></div>
+            <div class="hud-line hud-line-a"></div>
+            <div class="hud-line hud-line-b"></div>
+            <p>LOCK-ON / GAME FLOW / ENCOUNTER</p>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>01</span><span>Custom-engine game</span><span>4-person team</span></div>
+            <h3>Sendou — Action Combat</h3>
+            <p class="project-lede">A Sekiro-inspired combat game built on a custom C++/DirectX 11 engine.</p>
+            <ul class="contribution-list">
+              <li>Implemented lock-on acquisition, target switching, camera interpolation, and world-space markers.</li>
+              <li>Owned pause, death, revive, victory, leaderboard, and scene-transition flows.</li>
+              <li>Integrated the Blood Moon and boss-introduction sequence across lighting, particles, audio, camera, UI, and gameplay state.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies">
+              <span>C++20</span><span>DirectX 11</span><span>Lua</span><span>PhysX</span><span>RmlUi</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W14" target="_blank" rel="noreferrer">Read the case study ↗</a>
+              <a href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual visual-engine" aria-hidden="true">
+            <div class="node node-a">WORLD</div>
+            <div class="node node-b">ACTOR</div>
+            <div class="node node-c">COMPONENT</div>
+            <div class="node node-d">RENDER</div>
+            <div class="engine-path path-a"></div>
+            <div class="engine-path path-b"></div>
+            <div class="engine-path path-c"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>02</span><span>Engine & editor</span></div>
+            <h3>GTL Engine</h3>
+            <p class="project-lede">Fourteen intensive development cycles covering a custom C++ engine, editor, renderer, and gameplay runtime.</p>
+            <ul class="contribution-list compact">
+              <li>Contributed to rendering, property reflection, particles, physics, camera architecture, collision, and gameplay integration.</li>
+              <li>Worked in rotating 3–4 person teams, with individual responsibilities documented separately from team-wide features.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies">
+              <span>C++20</span><span>DirectX 11</span><span>HLSL</span><span>LuaJIT</span><span>PhysX</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Explore all 14 weeks ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-card-storm">
+          <div class="project-visual visual-storm" aria-hidden="true">
+            <div class="storm-ring ring-a"></div>
+            <div class="storm-ring ring-b"></div>
+            <div class="storm-ring ring-c"></div>
+            <div class="storm-core"></div>
+            <div class="flow-vector vector-a"></div>
+            <div class="flow-vector vector-b"></div>
+            <div class="flow-vector vector-c"></div>
+            <p>PROFILE · FLOW · COMPUTE · LIGHTNING</p>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>03</span><span>Published Unreal plugin</span><span>4-person team</span></div>
+            <h3>Volumetric Super Storm</h3>
+            <p class="project-lede">An art-directable storm-authoring system extending Unreal Engine’s native Volumetric Cloud workflow.</p>
+            <ul class="contribution-list compact">
+              <li>Implemented artist-facing vertical-profile authoring and profile sequencing tools.</li>
+              <li>Added RGBA flow-map encoding for local wind and dual-phase blending to avoid scroll resets.</li>
+              <li>Shipped as a documented Fab product with runtime, shader, and editor modules.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies">
+              <span>Unreal Engine 5.8</span><span>C++</span><span>DX12</span><span>SM6</span><span>Compute shaders</span>
+            </div>
+            <div class="project-links">
+              <a href="https://teamgorogoro.github.io/" target="_blank" rel="noreferrer">Product showcase ↗</a>
+              <a href="https://www.fab.com/listings/1c2d0fea-7278-49f0-9559-3efef3076ac0" target="_blank" rel="noreferrer">Fab listing ↗</a>
+              <a href="https://github.com/Rocketstein/Epic-Volumetric-Super-Storm" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual visual-runner" aria-hidden="true">
+            <div class="lane lane-left"></div>
+            <div class="lane lane-mid"></div>
+            <div class="lane lane-right"></div>
+            <div class="runner-block block-a"></div>
+            <div class="runner-block block-b"></div>
+            <div class="runner-player"></div>
+            <div class="gizmo"><span></span><i></i><b></b></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>04</span><span>Custom-engine game</span></div>
+            <h3>Engine Dive — Infinite Runner</h3>
+            <p class="project-lede">A three-lane runner connecting C++ engine systems to Lua gameplay and a complete title-to-results flow.</p>
+            <ul class="contribution-list compact">
+              <li>Implemented box, sphere, and capsule collision with begin/end overlap events.</li>
+              <li>Built procedural chunk recycling and obstacle placement that preserves a traversable lane.</li>
+              <li>Created the “Imposter Gizmo” mechanic and contributed camera-manager and modifier systems.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies">
+              <span>C++20</span><span>DirectX 11</span><span>LuaJIT</span><span>Procedural generation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Rocketstein/GTL_Engine/tree/main/W09" target="_blank" rel="noreferrer">Read the case study ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Mathematical foundations,<br>hands-on engine work.</h2>
+        <p>
+          My work sits where mathematics, real-time graphics, and game development meet. I enjoy moving between low-level systems and the tools or gameplay features that make those systems useful.
+        </p>
+        <p>
+          After graduating from the University of Illinois Urbana-Champaign, I completed Krafton Jungle’s intensive Game Tech Lab programme, building game technology in small, fast-moving teams. I am currently studying entity-component-system architecture through a solo engine project.
+        </p>
+      </div>
+
+      <div class="about-details">
+        <article>
+          <p class="detail-label">Education</p>
+          <h3>B.S. Mathematics & Computer Science</h3>
+          <p>University of Illinois Urbana-Champaign · May 2025</p>
+        </article>
+        <article>
+          <p class="detail-label">Core tools</p>
+          <h3>C++ · HLSL · Lua · Unreal Engine</h3>
+          <p>DirectX 11/12, PhysX, Git, Perforce, Visual Studio</p>
+        </article>
+        <article>
+          <p class="detail-label">Current focus</p>
+          <h3>Entity-component-system architecture</h3>
+          <p>Independent engine study and implementation</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Let’s build something<br>technically ambitious.</h2>
+      <p>I’m based in South Korea and open to graduate and junior game-programming opportunities.</p>
+      <div class="contact-links">
+        <a class="button button-primary" href="mailto:jun2020301@gmail.com">jun2020301@gmail.com</a>
+        <a class="button button-secondary" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> Hyungjun Kim</p>
+    <p>Built as a lightweight static site on GitHub Pages.</p>
+  </footer>
+</body>
+</html>
