@@ -89,8 +89,14 @@
       transparent 66%),
     linear-gradient(180deg,
       var(--bg) 0%,
-      transparent 11%,
-      transparent 89%,
+      rgba(8,12,16,.93) 4%,
+      rgba(8,12,16,.55) 10%,
+      rgba(8,12,16,.18) 16%,
+      transparent 22%,
+      transparent 78%,
+      rgba(8,12,16,.18) 84%,
+      rgba(8,12,16,.55) 90%,
+      rgba(8,12,16,.93) 96%,
       var(--bg) 100%);
   pointer-events: none;
   content: "";
@@ -100,7 +106,13 @@
   position: absolute;
   z-index: 2;
   inset: 0;
-  background: radial-gradient(ellipse 92% 88% at 75% 50%, transparent 58%, rgba(8,12,16,.12) 76%, rgba(8,12,16,.6) 100%);
+  background: radial-gradient(
+    ellipse 94% 82% at 75% 50%,
+    transparent 54%,
+    rgba(8,12,16,.10) 70%,
+    rgba(8,12,16,.34) 88%,
+    rgba(8,12,16,.68) 100%
+  );
   pointer-events: none;
   content: "";
 }
