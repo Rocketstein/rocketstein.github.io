@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://rocketstein.github.io/works.html">
   <title>Works — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260911-2">
   <script src="script.js" defer></script>
 </head>
 <body class="page-works">
@@ -32,38 +32,19 @@
     </section>
 
     <nav class="works-index" aria-label="Works index">
-      <a href="#sendou"><span>01</span>Sendou</a>
-      <a href="#gtl-engine"><span>02</span>GTL Engine</a>
-      <a href="#super-storm"><span>03</span>Super Storm</a>
-      <a href="#engine-dive"><span>04</span>Engine Dive</a>
+      <a href="#gtl-engine"><span>01</span>GTL Engine</a>
+      <a href="#super-storm"><span>02</span>Super Storm</a>
+      <a href="#engine-dive"><span>03</span>Engine Dive</a>
+      <a href="#sendou"><span>04</span>Sendou</a>
     </nav>
 
     <section class="project-stack" aria-label="Project case studies">
-      <article class="work-entry" id="sendou">
-        <div class="project-visual visual-lockon" aria-hidden="true">
-          <div class="target target-one"></div><div class="target target-two"></div><div class="lock-ring"></div>
-        </div>
-        <div class="project-content">
-          <div class="project-meta"><span>01</span><span>Team project</span></div>
-          <h2>Sendou — Action Combat</h2>
-          <p class="project-lede">A Sekiro-inspired action-combat game built on a custom C++ and DirectX 11 engine.</p>
-          <div class="role-block"><p class="detail-label">My role</p><p>Game flow, lock-on targeting, UI and scene transitions, encounter direction, and gameplay integration.</p></div>
-          <ul class="contribution-list">
-            <li>Implemented target acquisition, directional switching, camera interpolation, automatic release conditions, and world-space lock-on markers.</li>
-            <li>Owned the runtime flow across pause, death, revival, victory, leaderboard submission, title screens, and scene transitions.</li>
-            <li>Directed the Blood Moon and boss-introduction sequence across lighting, fog, particles, BGM, cameras, UI, enemy state, and player input.</li>
-          </ul>
-          <div class="tag-list"><span>C++20</span><span>DirectX 11</span><span>HLSL</span><span>Lua</span><span>PhysX</span><span>RmlUi</span></div>
-          <div class="project-links"><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W14" target="_blank" rel="noreferrer">Detailed case study ↗</a><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a></div>
-        </div>
-      </article>
-
       <article class="work-entry" id="gtl-engine">
         <div class="project-visual visual-engine" aria-hidden="true">
           <div class="node node-a">WORLD</div><div class="node node-b">ACTOR</div><div class="node node-c">COMPONENT</div><div class="node node-d">RENDER</div><div class="engine-path path-a"></div><div class="engine-path path-b"></div><div class="engine-path path-c"></div>
         </div>
         <div class="project-content">
-          <div class="project-meta"><span>02</span><span>Rotating teams</span></div>
+          <div class="project-meta"><span>01</span><span>Rotating teams</span></div>
           <h2>GTL Engine</h2>
           <p class="project-lede">A source portfolio covering fourteen intensive C++ and DirectX 11 engine and game-development cycles.</p>
           <div class="role-block"><p class="detail-label">My contribution</p><p>Rendering architecture, editor systems, property reflection, light culling, shadow allocation, particles, collision, cameras, physics, scripting, and gameplay integration.</p></div>
@@ -82,7 +63,7 @@
           <div class="storm-ring ring-a"></div><div class="storm-ring ring-b"></div><div class="storm-ring ring-c"></div><div class="storm-core"></div><div class="flow-vector vector-a"></div><div class="flow-vector vector-b"></div><div class="flow-vector vector-c"></div>
         </div>
         <div class="project-content">
-          <div class="project-meta"><span>03</span><span>Published Unreal plugin</span><span>Team project</span></div>
+          <div class="project-meta"><span>02</span><span>Published Unreal plugin</span><span>Team project</span></div>
           <h2>Volumetric Super Storm</h2>
           <p class="project-lede">An art-directable real-time storm-authoring system extending Unreal Engine’s native Volumetric Cloud workflow.</p>
           <div class="role-block"><p class="detail-label">My role</p><p>Vertical-profile authoring, profile sequencing, flow-map encoding, local wind motion, and shader behaviour for stable continuous scrolling.</p></div>
@@ -101,7 +82,7 @@
           <div class="lane lane-left"></div><div class="lane lane-mid"></div><div class="lane lane-right"></div><div class="runner-block block-a"></div><div class="runner-block block-b"></div><div class="runner-player"></div><div class="gizmo"></div>
         </div>
         <div class="project-content">
-          <div class="project-meta"><span>04</span><span>Team project</span></div>
+          <div class="project-meta"><span>03</span><span>Team project</span></div>
           <h2>Engine Dive — Infinite Runner</h2>
           <p class="project-lede">A three-lane runner combining C++ engine systems with Lua gameplay and a complete title-to-results flow.</p>
           <div class="role-block"><p class="detail-label">My role</p><p>Collision shapes and overlap flow, procedural map chunks, obstacle systems, the Imposter Gizmo mechanic, Player Camera Manager, and Camera Modifiers.</p></div>
@@ -112,6 +93,25 @@
           </ul>
           <div class="tag-list"><span>C++20</span><span>DirectX 11</span><span>LuaJIT</span><span>sol2</span><span>Procedural generation</span><span>Collision</span></div>
           <div class="project-links"><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W09" target="_blank" rel="noreferrer">Detailed case study ↗</a><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a></div>
+        </div>
+      </article>
+
+      <article class="work-entry" id="sendou">
+        <div class="project-visual visual-lockon" aria-hidden="true">
+          <div class="target target-one"></div><div class="target target-two"></div><div class="lock-ring"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta"><span>04</span><span>Team project</span></div>
+          <h2>Sendou — Action Combat</h2>
+          <p class="project-lede">A Sekiro-inspired action-combat game built on a custom C++ and DirectX 11 engine.</p>
+          <div class="role-block"><p class="detail-label">My role</p><p>Game flow, lock-on targeting, UI and scene transitions, encounter direction, and gameplay integration.</p></div>
+          <ul class="contribution-list">
+            <li>Implemented target acquisition, directional switching, camera interpolation, automatic release conditions, and world-space lock-on markers.</li>
+            <li>Owned the runtime flow across pause, death, revival, victory, leaderboard submission, title screens, and scene transitions.</li>
+            <li>Directed the Blood Moon and boss-introduction sequence across lighting, fog, particles, BGM, cameras, UI, enemy state, and player input.</li>
+          </ul>
+          <div class="tag-list"><span>C++20</span><span>DirectX 11</span><span>HLSL</span><span>Lua</span><span>PhysX</span><span>RmlUi</span></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W14" target="_blank" rel="noreferrer">Detailed case study ↗</a><a class="project-link" href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Source portfolio ↗</a></div>
         </div>
       </article>
     </section>
