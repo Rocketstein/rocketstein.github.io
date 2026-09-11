@@ -3,70 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Hyungjun (Kenneth) Kim — mathematics and computer science graduate focused on C++, real-time rendering, game engines, and gameplay systems.">
+  <meta name="description" content="About Hyungjun (Kenneth) Kim — a mathematics and computer science graduate focused on C++, real-time rendering, game engines, and gameplay systems.">
   <meta name="theme-color" content="#080c10">
   <meta property="og:title" content="About — Hyungjun Kim">
-  <meta property="og:description" content="Mathematical foundations and hands-on game-engine work.">
+  <meta property="og:description" content="A concise introduction and technical profile for a C++ game and rendering programmer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rocketstein.github.io/about.html">
   <title>About — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="about.css?v=about-1">
   <script src="script.js" defer></script>
 </head>
 <body class="page-about">
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Hyungjun Kim, home"><span class="brand-mark" aria-hidden="true">HK</span><span>Hyungjun Kim</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+      <a class="brand" href="index.html" aria-label="Hyungjun Kim, home">
+        <span class="brand-mark" aria-hidden="true">HK</span>
+        <span>Hyungjun Kim</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span><span></span><span></span>
+      </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
-        <a href="index.html">Home</a><a href="about.html" aria-current="page">About</a><a href="works.html">Works</a><a href="contact.html">Contact</a><a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="page-main">
-    <section class="page-hero" aria-labelledby="page-title">
-      <p class="eyebrow">About</p>
-      <h1 id="page-title">Mathematics in the foundation.<br>Game systems in practice.</h1>
-      <div class="page-hero-grid">
-        <p class="page-lede">I’m a C++ game and rendering programmer interested in the point where low-level systems become useful creative tools and responsive gameplay.</p>
-        <p class="page-summary">My work spans custom engine architecture, real-time rendering, editor tooling, physics, procedural systems, and complete playable game flows.</p>
-      </div>
-    </section>
+  <main id="main" class="about-main">
+    <div class="about-grid">
+      <article class="about-block bio-block" aria-labelledby="about-title">
+        <p class="eyebrow">Bio</p>
+        <h1 id="about-title">C++ game and rendering programmer.</h1>
 
-    <section class="about-story" aria-labelledby="story-title">
-      <div><p class="eyebrow">Background</p><h2 id="story-title">A systems-minded route into games.</h2></div>
-      <div class="prose-stack">
-        <p>I graduated from the University of Illinois Urbana-Champaign with a degree in Mathematics and Computer Science. That combination shaped how I approach game technology: start from the underlying model, make the trade-offs explicit, and turn the result into something testable and interactive.</p>
-        <p>After graduation, I completed Krafton Jungle’s intensive Game Tech Lab programme. In rotating small teams, I helped develop a C++ and DirectX 11 engine from its early foundations through rendering, editor, reflection, animation, particle, physics, scripting, and gameplay milestones.</p>
-        <p>I also co-developed Volumetric Super Storm, an Unreal Engine plugin published on Fab. The project reinforced a different side of engine work: artist-facing controls, editor workflows, reusable assets, and rendering features that make technical systems approachable to other disciplines.</p>
-        <p>I am currently studying entity-component-system architecture through an independent engine project, with particular attention to data ownership, system boundaries, iteration performance, and tooling.</p>
-      </div>
-    </section>
+        <div class="bio-copy">
+          <p>
+            Hello, I’m <strong>Hyungjun “Kenneth” Kim</strong>, a Mathematics and Computer Science graduate from the University of Illinois Urbana-Champaign. I’m interested in the point where low-level systems become useful creative tools and responsive gameplay.
+          </p>
+          <p>
+            After graduating, I completed Krafton Jungle’s Game Tech Lab, developing a custom C++ and DirectX 11 engine in rotating small teams and using it to build playable games. I later co-developed Volumetric Super Storm, an Unreal Engine plugin published on Fab, contributing to editor tooling and real-time cloud behaviour.
+          </p>
+          <p>
+            I’m currently studying entity-component-system architecture through an independent engine project, focusing on data ownership, system boundaries, iteration performance, and tooling.
+          </p>
+        </div>
 
-    <section class="profile-facts" aria-label="Profile facts">
-      <article class="fact-card"><p class="detail-label">Education</p><h3>B.S. Mathematics & Computer Science</h3><p>University of Illinois Urbana-Champaign · May 2025</p></article>
-      <article class="fact-card"><p class="detail-label">Intensive training</p><h3>Krafton Jungle · Game Tech Lab</h3><p>Custom engine and game development in rotating 3–4 person teams</p></article>
-      <article class="fact-card"><p class="detail-label">Current focus</p><h3>Entity-component-system architecture</h3><p>Independent engine design and implementation</p></article>
-    </section>
+        <dl class="bio-facts">
+          <div>
+            <dt>Education</dt>
+            <dd>B.S. Mathematics &amp; Computer Science · UIUC · 2025</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Sejong, South Korea · Open to relocation</dd>
+          </div>
+        </dl>
+      </article>
 
-    <section class="skills-section" aria-labelledby="skills-title">
-      <div class="section-title">
-        <p class="eyebrow">Technical profile</p>
-        <h2 id="skills-title">Implementation detail and architectural reasoning.</h2>
-        <p>I am most comfortable when a problem requires clear ownership, data flow, rendering contracts, runtime/editor separation, and debugging across subsystem boundaries.</p>
-      </div>
-      <div class="skill-grid">
-        <article class="skill-card"><span>01</span><h3>Languages</h3><p>C++17/20, HLSL, Lua/LuaJIT, Python</p></article>
-        <article class="skill-card"><span>02</span><h3>Graphics & engines</h3><p>DirectX 11/12, Unreal Engine 5, shader programming, compute shaders, render passes</p></article>
-        <article class="skill-card"><span>03</span><h3>Game systems</h3><p>Collision, cameras, particles, reflection, physics, procedural generation, gameplay flow</p></article>
-        <article class="skill-card"><span>04</span><h3>Workflow</h3><p>Git, Perforce, Visual Studio, Dear ImGui, RmlUi, profiling, and iterative debugging</p></article>
-      </div>
-    </section>
+      <section class="about-block skills-block" aria-labelledby="skills-title">
+        <p class="eyebrow">Skills</p>
+        <h2 id="skills-title">Technical toolkit</h2>
+
+        <dl class="skills-list">
+          <div>
+            <dt>Languages</dt>
+            <dd>C++17/20, HLSL, Lua/LuaJIT, Python</dd>
+          </div>
+          <div>
+            <dt>Graphics &amp; engines</dt>
+            <dd>DirectX 11/12, Unreal Engine 5, shader programming, compute shaders, render passes</dd>
+          </div>
+          <div>
+            <dt>Game systems</dt>
+            <dd>Engine and editor architecture, reflection, collision, cameras, particles, physics, procedural generation</dd>
+          </div>
+          <div>
+            <dt>Workflow</dt>
+            <dd>Git, Perforce, Visual Studio, Dear ImGui, RmlUi, profiling, and iterative debugging</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
   </main>
 
-  <footer class="site-footer"><p>© <span data-year></span> Hyungjun Kim</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="works.html">Works</a><a href="contact.html">Contact</a></nav></footer>
+  <footer class="site-footer">
+    <p>© <span data-year></span> Hyungjun Kim</p>
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
 </body>
 </html>
