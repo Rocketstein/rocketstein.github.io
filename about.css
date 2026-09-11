@@ -1,16 +1,26 @@
-/* About-only layout: one concise Bio block with an embedded toolkit. */
+/* About-only layout: a concise Bio card paired with a project render. */
 .about-main {
-  width: min(1000px, calc(100% - 48px));
+  width: 100%;
   min-height: calc(100svh - var(--header-height) - 74px);
   display: grid;
   align-items: center;
-  margin: 0 auto;
-  padding: clamp(54px, 7vw, 88px) 0;
+  padding: clamp(42px, 5vw, 72px) 0;
+  overflow: hidden;
+}
+
+.about-shell {
+  width: min(1540px, calc(100% - max(24px, calc((100vw - var(--max)) / 2))));
+  display: grid;
+  grid-template-columns: minmax(500px, .92fr) minmax(0, 1.08fr);
+  align-items: center;
+  margin-left: max(24px, calc((100vw - var(--max)) / 2));
 }
 
 .bio-block {
+  position: relative;
+  z-index: 2;
   min-width: 0;
-  padding: clamp(34px, 4.8vw, 58px);
+  padding: clamp(32px, 3.2vw, 50px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: linear-gradient(155deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -24,7 +34,7 @@
 }
 
 .bio-copy {
-  max-width: 800px;
+  max-width: 680px;
   margin-top: 34px;
 }
 
@@ -107,12 +117,128 @@
   line-height: 1.55;
 }
 
+.about-visual {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  height: clamp(620px, 72svh, 780px);
+  margin: 0 0 0 clamp(-58px, -4vw, -30px);
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,.28) 7%,
+    rgba(0,0,0,.72) 15%,
+    #000 24%,
+    #000 76%,
+    rgba(0,0,0,.72) 85%,
+    rgba(0,0,0,.28) 93%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,.28) 7%,
+    rgba(0,0,0,.72) 15%,
+    #000 24%,
+    #000 76%,
+    rgba(0,0,0,.72) 85%,
+    rgba(0,0,0,.28) 93%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.about-visual::before,
+.about-visual::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.about-visual::before {
+  background: linear-gradient(
+    90deg,
+    var(--bg) 0%,
+    rgba(8,12,16,.97) 12%,
+    rgba(8,12,16,.82) 25%,
+    rgba(8,12,16,.42) 41%,
+    transparent 59%
+  );
+}
+
+.about-visual::after {
+  background: radial-gradient(
+    ellipse 91% 86% at 65% 52%,
+    transparent 60%,
+    rgba(8,12,16,.09) 77%,
+    rgba(8,12,16,.30) 100%
+  );
+}
+
+.about-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 64% 60%;
+  transform: scale(1.07);
+  filter: brightness(.82) saturate(.92) contrast(1.03);
+}
+
+@media (max-width: 1120px) {
+  .about-main {
+    width: min(var(--max), calc(100% - 48px));
+    min-height: auto;
+    align-items: start;
+    margin: 0 auto;
+    padding: 58px 0 30px;
+    overflow: visible;
+  }
+
+  .about-shell {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-left: 0;
+  }
+
+  .about-visual {
+    width: calc(100% + 48px);
+    height: auto;
+    aspect-ratio: 1.52;
+    margin: 0 -24px;
+  }
+
+  .about-visual::before {
+    background: linear-gradient(
+      90deg,
+      var(--bg) 0%,
+      transparent 13%,
+      transparent 87%,
+      var(--bg) 100%
+    );
+  }
+
+  .about-visual::after {
+    background: radial-gradient(
+      ellipse 92% 84% at 50% 52%,
+      transparent 64%,
+      rgba(8,12,16,.08) 81%,
+      rgba(8,12,16,.28) 100%
+    );
+  }
+}
+
 @media (max-width: 720px) {
   .about-main {
     width: min(100% - 32px, 1000px);
-    min-height: auto;
-    align-items: start;
-    padding: 48px 0 64px;
+    padding: 48px 0 22px;
   }
 
   .bio-block {
@@ -142,5 +268,20 @@
   .bio-facts {
     grid-template-columns: 1fr;
     margin-top: 22px;
+  }
+
+  .about-shell {
+    gap: 22px;
+  }
+
+  .about-visual {
+    width: calc(100% + 32px);
+    aspect-ratio: 1.35;
+    margin: 0 -16px;
+  }
+
+  .about-visual img {
+    object-position: 63% 60%;
+    transform: scale(1.04);
   }
 }
