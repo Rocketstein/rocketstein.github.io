@@ -12,7 +12,7 @@
   <title>About — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="about.css?v=about-2">
+  <link rel="stylesheet" href="about.css?v=about-3">
   <script src="script.js" defer></script>
 </head>
 <body class="page-about">
@@ -38,42 +38,48 @@
   </header>
 
   <main id="main" class="about-main">
-    <article class="bio-block" aria-labelledby="about-title">
-      <h1 id="about-title">Bio</h1>
+    <section class="about-shell" aria-labelledby="about-title">
+      <article class="about-bio bio-block">
+        <h1 id="about-title">Bio</h1>
 
-      <div class="bio-copy">
-        <p>
-          Hello, I’m <strong>Hyungjun “Kenneth” Kim</strong>, a Mathematics and Computer Science graduate from the University of Illinois Urbana-Champaign. I’m interested in the point where low-level systems become useful creative tools and responsive gameplay.
-        </p>
-        <p>
-          After graduating, I completed Krafton Jungle’s Game Tech Lab, developing a custom C++ and DirectX 11 engine in rotating small teams and using it to build playable games. I later co-developed Volumetric Super Storm, an Unreal Engine plugin published on Fab, contributing to editor tooling and real-time cloud behaviour.
-        </p>
-        <p>
-          I’m currently studying entity-component-system architecture through an independent engine project, focusing on data ownership, system boundaries, iteration performance, and tooling.
-        </p>
-      </div>
-
-      <section class="bio-toolkit" aria-labelledby="toolkit-title">
-        <h2 id="toolkit-title">Technical toolkit</h2>
-        <ul class="toolkit-list">
-          <li>C++</li>
-          <li>Unreal Engine</li>
-          <li>Git</li>
-          <li>Perforce</li>
-        </ul>
-      </section>
-
-      <dl class="bio-facts">
-        <div>
-          <dt>Education</dt>
-          <dd>B.S. Mathematics &amp; Computer Science · UIUC · 2025</dd>
+        <div class="bio-copy">
+          <p>
+            Hello, I’m <strong>Hyungjun “Kenneth” Kim</strong>, a Mathematics and Computer Science graduate from the University of Illinois Urbana-Champaign. I’m interested in the point where low-level systems become useful creative tools and responsive gameplay.
+          </p>
+          <p>
+            After graduating, I completed Krafton Jungle’s Game Tech Lab, developing a custom C++ and DirectX 11 engine in rotating small teams and using it to build playable games. I later co-developed Volumetric Super Storm, an Unreal Engine plugin published on Fab, contributing to editor tooling and real-time cloud behaviour.
+          </p>
+          <p>
+            I’m currently studying entity-component-system architecture through an independent engine project, focusing on data ownership, system boundaries, iteration performance, and tooling.
+          </p>
         </div>
-        <div>
-          <dt>Based in</dt>
-          <dd>Sejong, South Korea · Open to relocation</dd>
-        </div>
-      </dl>
-    </article>
+
+        <section class="bio-toolkit" aria-labelledby="toolkit-title">
+          <h2 id="toolkit-title">Technical toolkit</h2>
+          <ul class="toolkit-list">
+            <li>C++</li>
+            <li>Unreal Engine</li>
+            <li>Git</li>
+            <li>Perforce</li>
+          </ul>
+        </section>
+
+        <dl class="bio-facts">
+          <div>
+            <dt>Education</dt>
+            <dd>B.S. Mathematics &amp; Computer Science · UIUC · 2025</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Sejong, South Korea · Open to relocation</dd>
+          </div>
+        </dl>
+      </article>
+
+      <figure class="about-visual" aria-hidden="true">
+        <img src="assets/images/about-cube.png" alt="" width="1731" height="1054" loading="eager" fetchpriority="high">
+      </figure>
+    </section>
   </main>
 
   <footer class="site-footer">
