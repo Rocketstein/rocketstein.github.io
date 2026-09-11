@@ -352,6 +352,13 @@ h3 {
   padding-bottom: clamp(62px, 8vw, 96px);
   border-bottom: 1px solid var(--line);
 }
+.page-works .page-main {
+  padding-top: clamp(52px, 7vw, 88px);
+}
+.page-works .page-hero {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
 .page-hero h1 { font-size: clamp(3.15rem, 6.8vw, 6.25rem); }
 .page-hero-grid {
   display: grid;
