@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sendou case study by Hyungjun Kim: lock-on targeting, game flow, UI transitions, encounter direction, and gameplay integration.">
+  <meta name="theme-color" content="#080c10">
+  <meta property="og:title" content="Sendou — Hyungjun Kim">
+  <meta property="og:description" content="A Sekiro-inspired action-combat game built on a custom C++ and DirectX 11 engine.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rocketstein.github.io/sendou.html">
+  <title>Sendou — Hyungjun Kim</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260912-2">
+  <link rel="stylesheet" href="project.css?v=20260912-2">
+  <script src="script.js" defer></script>
+</head>
+<body class="page-project">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Hyungjun Kim, home"><span class="brand-mark" aria-hidden="true">HK</span><span>Hyungjun Kim</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="works.html" aria-current="page">Works</a><a href="contact.html">Contact</a><a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-main">
+    <a class="case-back" href="works.html#sendou">← Selected Works</a>
+
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-meta"><span>04</span><span>Team project</span><span>Custom engine</span></div>
+      <h1 id="case-title">Sendou</h1>
+      <p class="case-lede">A Sekiro-inspired action-combat game built on a custom C++ and DirectX 11 engine.</p>
+      <div class="case-hero-actions">
+        <a class="button button-primary" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W14" target="_blank" rel="noreferrer" aria-label="View Sendou W14 source code in a new tab">View Source ↗</a>
+      </div>
+    </section>
+
+    <section class="case-media" aria-labelledby="demo-title">
+      <div class="case-section-heading">
+        <div>
+          <h2 id="demo-title">Gameplay demo</h2>
+        </div>
+      </div>
+
+      <div class="case-video-frame case-video-placeholder">
+        <div class="case-video-grid" aria-hidden="true"></div>
+        <div class="case-video-placeholder-copy">
+          <strong>Demo video coming soon</strong>
+          <span>Gameplay capture placeholder</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-contributions" aria-labelledby="contributions-title">
+      <div class="case-section-heading">
+        <div>
+          <p class="case-label">Selected implementation work</p>
+          <h2 id="contributions-title">Key contributions</h2>
+        </div>
+      </div>
+      <ol class="case-contribution-grid">
+        <li>
+          <span>01</span>
+          <h3>Lock-on targeting</h3>
+          <p>Implemented target acquisition and switching, camera interpolation, automatic release conditions, and world-space markers.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Complete game flow</h3>
+          <p>Owned the runtime flow across pause, death, revival, victory, leaderboard submission, title screens, and scene transitions.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Encounter direction</h3>
+          <p>Directed the Blood Moon and boss introduction across lighting, fog, particles, BGM, cameras, UI, enemy state, and input.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© <span data-year></span> Hyungjun Kim</p></footer>
+</body>
+</html>
