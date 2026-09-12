@@ -103,6 +103,13 @@ body.page-project::before {
   content: "";
 }
 
+.case-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+}
+
 .case-video-placeholder {
   display: grid;
   aspect-ratio: 16 / 9;
