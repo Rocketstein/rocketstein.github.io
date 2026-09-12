@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Engine Dive case study by Hyungjun Kim: collision systems, procedural course generation, gameplay tooling, and camera systems.">
+  <meta name="theme-color" content="#080c10">
+  <meta property="og:title" content="Engine Dive — Hyungjun Kim">
+  <meta property="og:description" content="A custom-engine infinite runner combining C++ systems, Lua gameplay, procedural generation, and collision tooling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rocketstein.github.io/engine-dive.html">
+  <title>Engine Dive — Hyungjun Kim</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260911-2">
+  <link rel="stylesheet" href="project.css?v=20260912-1">
+  <script src="script.js" defer></script>
+</head>
+<body class="page-project">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Hyungjun Kim, home"><span class="brand-mark" aria-hidden="true">HK</span><span>Hyungjun Kim</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="works.html" aria-current="page">Works</a><a href="contact.html">Contact</a><a class="nav-external" href="https://github.com/Rocketstein" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-main">
+    <a class="case-back" href="works.html#engine-dive">← Selected Works</a>
+
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-meta"><span>03</span><span>Team project</span><span>Custom engine</span></div>
+      <h1 id="case-title">Engine Dive</h1>
+      <p class="case-subtitle">Infinite Runner</p>
+      <p class="case-lede">A three-lane runner combining C++ engine systems with Lua gameplay and a complete title-to-results flow.</p>
+      <div class="tag-list" aria-label="Technologies used">
+        <span>C++20</span><span>DirectX 11</span><span>LuaJIT</span><span>sol2</span><span>Procedural generation</span><span>Collision</span>
+      </div>
+    </section>
+
+    <section class="case-media" aria-labelledby="demo-title">
+      <div class="case-section-heading">
+        <div>
+          <p class="case-label">Reserved media area</p>
+          <h2 id="demo-title">Gameplay demo</h2>
+        </div>
+        <p>A dedicated 16:9 space for a short gameplay capture, kept separate from the lightweight Works index.</p>
+      </div>
+
+      <div class="case-video-frame case-video-placeholder" role="img" aria-label="Reserved 16 by 9 area for the Engine Dive gameplay demo">
+        <div class="case-video-grid" aria-hidden="true"></div>
+        <div class="case-video-placeholder-copy">
+          <span>16:9 media</span>
+          <strong>Demo video coming soon</strong>
+          <span>Gameplay capture placeholder</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-overview" aria-label="Project overview">
+      <article class="case-panel">
+        <p class="case-label">Overview</p>
+        <h2>Engine and gameplay in one loop</h2>
+        <p>The project applies custom engine features directly to a complete playable flow, connecting runtime systems, Lua-driven gameplay, procedural content, and player-facing feedback.</p>
+      </article>
+      <article class="case-panel case-panel-accent">
+        <p class="case-label">My role</p>
+        <h2>Systems and integration</h2>
+        <p>Collision shapes and overlap flow, procedural map chunks, obstacle systems, the Imposter Gizmo mechanic, Player Camera Manager, and Camera Modifiers.</p>
+      </article>
+    </section>
+
+    <section class="case-contributions" aria-labelledby="contributions-title">
+      <div class="case-section-heading">
+        <div>
+          <p class="case-label">Selected implementation work</p>
+          <h2 id="contributions-title">Key contributions</h2>
+        </div>
+      </div>
+      <ol class="case-contribution-grid">
+        <li>
+          <span>01</span>
+          <h3>Collision and overlap flow</h3>
+          <p>Implemented box, sphere, and capsule components with every supported shape pairing and begin/end overlap delivery.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Procedural course generation</h3>
+          <p>Built runtime chunk generation and recycling, probabilistic obstacle placement, and constraints that preserve a traversable lane.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Imposter Gizmo mechanic</h3>
+          <p>Created a fake editor gizmo that captures and transforms obstacles as a hostile gameplay mechanic.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="case-links-panel" aria-labelledby="explore-title">
+      <div>
+        <p class="case-label">Explore the implementation</p>
+        <h2 id="explore-title">Source and technical notes</h2>
+      </div>
+      <div class="case-link-actions">
+        <a class="button button-primary" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W09" target="_blank" rel="noreferrer">View W09 source ↗</a>
+        <a class="button button-secondary" href="https://github.com/Rocketstein/GTL_Engine" target="_blank" rel="noreferrer">Explore engine repository ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© <span data-year></span> Hyungjun Kim</p></footer>
+</body>
+</html>
+
