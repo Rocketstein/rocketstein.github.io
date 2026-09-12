@@ -63,6 +63,8 @@ body.page-project::before {
 
 .case-hero-actions {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 28px;
 }
 
