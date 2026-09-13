@@ -9,6 +9,7 @@
   <meta property="og:description" content="A custom-engine infinite runner combining C++ systems, Lua gameplay, procedural generation, and collision tooling.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rocketstein.github.io/engine-dive.html">
+  <meta property="og:image" content="https://rocketstein.github.io/assets/images/engine-dive-thumbnail.webp">
   <title>Engine Dive — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
@@ -33,7 +34,7 @@
     <section class="case-hero" aria-labelledby="case-title">
       <div class="case-meta"><span>03</span><span>Team project</span><span>Custom engine</span></div>
       <h1 id="case-title">Engine Dive</h1>
-      <p class="case-lede">An infinite runner game feautring a mission diving into a malfunctioning, bug-infested engine to recover lost error traces.</p>
+      <p class="case-lede">An infinite runner game featuring a mission diving into a malfunctioning, bug-infested engine to recover lost error traces.</p>
       <div class="case-hero-actions">
         <a class="button button-primary" href="https://github.com/Rocketstein/GTL_Engine/tree/main/W09" target="_blank" rel="noreferrer" aria-label="View Engine Dive W09 source code in a new tab">View Source ↗</a>
       </div>
@@ -46,12 +47,11 @@
         </div>
       </div>
 
-      <div class="case-video-frame case-video-placeholder">
-        <div class="case-video-grid" aria-hidden="true"></div>
-        <div class="case-video-placeholder-copy">
-          <strong>Demo video coming soon</strong>
-          <span>Gameplay capture placeholder</span>
-        </div>
+      <div class="case-video-frame">
+        <video class="case-video" controls playsinline preload="metadata" poster="assets/images/engine-dive-thumbnail.webp">
+          <source src="assets/videos/engine-dive-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
 
@@ -85,4 +85,3 @@
   <footer class="site-footer"><p>© <span data-year></span> Hyungjun Kim</p></footer>
 </body>
 </html>
-
