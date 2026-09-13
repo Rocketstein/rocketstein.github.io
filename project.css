@@ -389,6 +389,7 @@ body.page-project::before {
 }
 
 .challenge-stage-copy > p.challenge-stage-result {
+  min-block-size: 10rem;
   margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid var(--line);
@@ -477,6 +478,7 @@ body.page-project::before {
   }
 
   .challenge-stage-copy > p.challenge-stage-result {
+    min-block-size: 0;
     margin-top: 22px;
   }
 }
