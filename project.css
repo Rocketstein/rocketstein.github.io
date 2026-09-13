@@ -177,7 +177,8 @@ body.page-project::before {
 
 .case-contributions,
 .case-related,
-.case-pipeline {
+.case-pipeline,
+.case-challenge {
   margin-top: clamp(48px, 5vw, 64px);
 }
 
@@ -325,6 +326,161 @@ body.page-project::before {
   line-height: 1.55;
 }
 
+.challenge-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.challenge-copy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.challenge-copy-grid article,
+.phase-diagram {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(155deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+}
+
+.challenge-copy-grid article {
+  padding: 24px;
+}
+
+.challenge-copy-grid article > span,
+.phase-diagram-head > span {
+  color: var(--accent);
+  font: 700 .69rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.challenge-copy-grid p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: .89rem;
+  line-height: 1.72;
+}
+
+.phase-diagram {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  min-height: 260px;
+}
+
+.phase-diagram::before {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(146,255,208,.12) 50%, transparent 50.2%),
+    radial-gradient(circle at 72% 50%, rgba(146,255,208,.08), transparent 35%);
+  pointer-events: none;
+  content: "";
+}
+
+.phase-diagram-head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.phase-diagram-head small {
+  color: var(--faint);
+  font-size: .75rem;
+}
+
+.phase-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.phase-name {
+  color: var(--faint);
+  font: 700 .74rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.phase-track {
+  position: relative;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+}
+
+.phase-line,
+.phase-fade {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+.phase-line {
+  left: 4%;
+  width: 70%;
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(146,255,208,.22);
+}
+
+.phase-a {
+  width: 62%;
+}
+
+.phase-b {
+  left: 28%;
+  width: 68%;
+}
+
+.phase-fade-a {
+  left: 56%;
+  width: 18%;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.phase-fade-b {
+  left: 28%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.phase-wrap {
+  position: absolute;
+  top: -16px;
+  left: 72%;
+  color: var(--faint);
+  font: 650 .62rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.phase-blend-label {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0 0 40px;
+  color: var(--faint);
+  font: 650 .68rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .challenge-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 900px) {
   .case-contribution-grid,
   .case-related-grid {
@@ -357,6 +513,10 @@ body.page-project::before {
 
   .case-pipeline-flow li::after {
     display: none;
+  }
+
+  .challenge-copy-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -403,7 +563,8 @@ body.page-project::before {
 
   .case-contributions,
   .case-related,
-  .case-pipeline {
+  .case-pipeline,
+  .case-challenge {
     margin-top: 48px;
   }
 
@@ -437,5 +598,19 @@ body.page-project::before {
   .case-pipeline-flow span {
     margin-bottom: 24px;
   }
-}
 
+  .phase-diagram {
+    min-height: 240px;
+    padding: 22px;
+  }
+
+  .phase-diagram-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .phase-row {
+    margin-top: 30px;
+  }
+}
