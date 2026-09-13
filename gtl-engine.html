@@ -135,8 +135,8 @@
       </ol>
 
       <div class="challenge-summary">
-        <h3>Conclusion + trade-off</h3>
-        <p>Sorting at the appropriate granularity produces visually correct alpha blending for the engine's transparent geometry and particle effects. The cost is additional per-view, per-frame CPU sorting, and depth sorting remains an approximation for mutually intersecting transparent geometry; those cases would require a more expensive order-independent transparency technique.</p>
+        <h3>Conclusion</h3>
+        <p>Sorting at the appropriate granularity produces visually correct alpha blending for the engine's transparent geometry and particle effects. User-facing flexibility is granted for particle emitters, which the naive depth-sorting technique fails to apply.</p>
       </div>
     </section>
 
