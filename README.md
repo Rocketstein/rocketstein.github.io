@@ -7,7 +7,7 @@ A lightweight, framework-free portfolio for C++ game, engine, rendering, and gam
 - `index.html` — Home: positioning, core profile, and short routes into the work
 - `about.html` — About: background, education, technical profile, and working principles
 - `works.html` — Works: detailed case studies for Sendou, GTL Engine, Volumetric Super Storm, and Engine Dive
-- `contact.html` — Contact: availability, email, location, GitHub, and CV status
+- `contact.html` — Contact: availability, email, location, and GitHub
 - `styles.css` — shared responsive design system and temporary technical illustrations
 - `script.js` — shared header, mobile navigation, footer year, and page-entry enhancement
 - `assets/` — final screenshots, short clips, showreel, CV, and social-preview media
@@ -35,7 +35,6 @@ The current project visuals are CSS-generated placeholders so no unapproved or m
 - `assets/gtl-engine-hero.webp` or an editor/rendering montage
 - `assets/super-storm-hero.webp` or a storm-authoring clip
 - `assets/engine-dive-hero.webp` or a procedural-runner clip
-- `assets/hyungjun-kim-cv.pdf`
 - `assets/social-preview.jpg`
 
 Prefer optimised WebP/AVIF images and externally hosted longer videos. Keep each homepage/project preview focused on the specific systems described in the accompanying text.
