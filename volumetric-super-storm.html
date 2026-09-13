@@ -12,7 +12,7 @@
   <title>Volumetric Super Storm — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260913-3">
+  <link rel="stylesheet" href="project.css?v=20260913-4">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -124,52 +124,52 @@
 
       <ol class="challenge-stages">
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image">
+              <img src="assets/images/noise-scroll-continuous.png" alt="A time-based flow equation above a graph whose sampling offset increases continuously." width="460" height="410" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Time-scaled flow produces smooth motion but unbounded coordinates</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>01</span><span>Baseline</span></p>
             <h3>Continuous scrolling</h3>
             <p>The first pass moved the 3D noise coordinates directly with time. Motion stayed smooth, but the sampling offset continued to grow without bound.</p>
             <p class="challenge-stage-result"><span>Problem</span>Long-running sessions drive sampling into increasingly large coordinates, where floating-point precision degrades and a reset eventually becomes necessary.</p>
           </div>
-          <figure class="challenge-stage-visual">
-            <img src="assets/images/noise-scroll-continuous.png" alt="A time-based flow equation above a graph whose sampling offset increases continuously." width="460" height="410" loading="lazy" decoding="async">
-            <figcaption>Time-scaled flow produces smooth motion but unbounded coordinates</figcaption>
-          </figure>
         </li>
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image">
+              <img src="assets/images/noise-scroll-single-phase.png" alt="A frac time equation above a sawtooth graph that repeatedly resets from the cap to zero." width="580" height="388" loading="lazy" decoding="async">
+            </div>
+            <figcaption>frac(time) bounds the phase but introduces a hard reset</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>02</span><span>First fix</span></p>
             <h3>Single-phase wrapping</h3>
             <p>Applying <code>frac(time)</code> keeps the phase bounded and repeats the sampling offset inside a fixed range.</p>
             <p class="challenge-stage-result"><span>New problem</span>At every <code>1 → 0</code> wrap, the lookup jumps to an unrelated place in the 3D noise field. The sudden density change appears as a visible pop.</p>
           </div>
-          <figure class="challenge-stage-visual">
-            <img src="assets/images/noise-scroll-single-phase.png" alt="A frac time equation above a sawtooth graph that repeatedly resets from the cap to zero." width="580" height="388" loading="lazy" decoding="async">
-            <figcaption>frac(time) bounds the phase but introduces a hard reset</figcaption>
-          </figure>
         </li>
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image">
+              <img src="assets/images/noise-scroll-dual-phase.png" alt="Equations for two staggered phases and complementary triangular weights above a graph of the two offset sawtooth phases." width="774" height="431" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Two offset phases alternate influence across each wrap</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>03</span><span>Final solution</span></p>
             <h3>Staggered dual-phase blending</h3>
-            <p>Two phases separated by <code>0.5</code> are sampled together. Each phase decodes both the low- and high-frequency (LF/HF) noise, and the two phase results are blended with complementary triangular weights.</p>
+            <p>Two phases separated by <code>0.5</code> each sample and decode the low- and high-frequency (LF/HF) noise, then blend the two results with complementary triangular weights.</p>
             <p class="challenge-stage-result"><span>Solution</span>When one phase reaches its wrap, the other carries the visible motion. The reset is hidden during the hand-off.</p>
           </div>
-          <figure class="challenge-stage-visual">
-            <img src="assets/images/noise-scroll-dual-phase.png" alt="Equations for two staggered phases and complementary triangular weights above a graph of the two offset sawtooth phases." width="774" height="431" loading="lazy" decoding="async">
-            <figcaption>Two offset phases alternate influence across each wrap</figcaption>
-          </figure>
         </li>
       </ol>
 
-      <div class="challenge-summary" role="group" aria-label="Conclusion and trade-off">
-        <article>
-          <h3>Conclusion</h3>
-          <p>The dual-phase scheme removes visible reset pops and keeps long-running cloud motion continuous.</p>
-        </article>
-        <article>
-          <h3>Trade-off</h3>
-          <p>The scheme requires a second set of LF and HF 3D-noise samples, increasing shader cost in exchange for temporal continuity.</p>
-        </article>
+      <div class="challenge-summary">
+        <h3>Conclusion + trade-off</h3>
+        <p>The dual-phase scheme keeps long-running cloud motion continuous without visible reset pops, at the cost of a second set of LF/HF 3D-noise samples.</p>
       </div>
     </section>
   </main>

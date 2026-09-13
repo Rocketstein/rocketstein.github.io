@@ -327,25 +327,32 @@ body.page-project::before {
 }
 
 .challenge-stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
   margin: 32px 0 0;
   padding: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(155deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
   list-style: none;
 }
 
 .challenge-stage {
-  display: grid;
-  grid-template-columns: minmax(250px, .78fr) minmax(360px, 1.22fr);
-  align-items: center;
-  gap: clamp(28px, 4vw, 58px);
-  padding: clamp(26px, 3.5vw, 42px);
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 18px 18px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(155deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
 }
 
-.challenge-stage + .challenge-stage {
-  border-top: 1px solid var(--line);
+.challenge-stage-copy {
+  display: flex;
+  width: 100%;
+  max-width: 580px;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 24px 4px 0;
 }
 
 .challenge-stage-kicker {
@@ -363,15 +370,17 @@ body.page-project::before {
 }
 
 .challenge-stage-copy h3 {
-  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  min-height: 2.5em;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
   letter-spacing: -.025em;
+  line-height: 1.25;
 }
 
 .challenge-stage-copy > p:not(.challenge-stage-kicker) {
   margin: 16px 0 0;
   color: var(--muted);
-  font-size: .91rem;
-  line-height: 1.72;
+  font-size: .88rem;
+  line-height: 1.68;
 }
 
 .challenge-stage-copy code {
@@ -380,13 +389,12 @@ body.page-project::before {
 }
 
 .challenge-stage-copy > p.challenge-stage-result {
-  margin-top: 22px;
+  margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 
-.challenge-stage-result > span,
-.challenge-summary article > h3 {
+.challenge-stage-result > span {
   display: block;
   margin-bottom: 9px;
   color: var(--accent);
@@ -396,21 +404,33 @@ body.page-project::before {
 }
 
 .challenge-stage-visual {
-  width: min(100%, 580px);
-  margin: 0;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
   overflow: hidden;
-  justify-self: end;
   border: 1px solid var(--line-strong);
   border-radius: 14px;
+  background: var(--bg-soft);
+}
+
+.challenge-stage-image {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  place-items: center;
   background: #fff;
 }
 
 .challenge-stage-visual img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .challenge-stage-visual figcaption {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
   padding: 10px 14px;
   border-top: 1px solid var(--line);
   background: var(--bg-soft);
@@ -421,20 +441,21 @@ body.page-project::before {
 
 .challenge-summary {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(170px, .28fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
   margin-top: 16px;
-  overflow: hidden;
+  padding: 24px 28px;
   border: 1px solid rgba(146,255,208,.28);
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(146,255,208,.065), rgba(117,223,255,.025));
 }
 
-.challenge-summary article {
-  padding: 26px 28px;
-}
-
-.challenge-summary article + article {
-  border-left: 1px solid var(--line);
+.challenge-summary h3 {
+  color: var(--accent);
+  font: 700 .67rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .challenge-summary p {
@@ -442,6 +463,20 @@ body.page-project::before {
   color: var(--muted);
   font-size: .91rem;
   line-height: 1.72;
+}
+
+@media (max-width: 1000px) {
+  .challenge-stages {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-stage-copy h3 {
+    min-height: 0;
+  }
+
+  .challenge-stage-copy > p.challenge-stage-result {
+    margin-top: 22px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -478,13 +513,6 @@ body.page-project::before {
     display: none;
   }
 
-  .challenge-stage {
-    grid-template-columns: 1fr;
-  }
-
-  .challenge-stage-visual {
-    justify-self: start;
-  }
 }
 
 @media (max-width: 720px) {
@@ -566,31 +594,30 @@ body.page-project::before {
     margin-bottom: 24px;
   }
 
-  .challenge-stages,
+  .challenge-stage,
   .challenge-summary {
     border-radius: 16px;
   }
 
+  .challenge-stages {
+    gap: 12px;
+  }
+
   .challenge-stage {
-    gap: 24px;
-    padding: 24px 22px;
+    padding: 16px 16px 22px;
   }
 
   .challenge-stage-visual {
-    width: 100%;
     border-radius: 12px;
+  }
+
+  .challenge-stage-copy {
+    padding: 22px 4px 0;
   }
 
   .challenge-summary {
     grid-template-columns: 1fr;
-  }
-
-  .challenge-summary article {
+    gap: 10px;
     padding: 23px 22px;
-  }
-
-  .challenge-summary article + article {
-    border-top: 1px solid var(--line);
-    border-left: 0;
   }
 }
