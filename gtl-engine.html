@@ -13,7 +13,7 @@
   <title>GTL Engine — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260913-1">
+  <link rel="stylesheet" href="project.css?v=20260914-1">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -78,6 +78,48 @@
           <p>Created a build-time reflection pipeline whose generated metadata powers editor widgets and JSON scene persistence.</p>
         </li>
       </ol>
+    </section>
+
+    <section class="case-challenge" aria-labelledby="engine-challenge-title">
+      <div class="case-section-heading">
+        <div>
+          <p class="case-label">Engineering challenge</p>
+          <h2 id="engine-challenge-title">Engine systems deep dive</h2>
+          <p class="case-section-copy">A focused case study can live here, following one engine problem from its first failure mode through the final design and the trade-offs that came with it.</p>
+        </div>
+      </div>
+
+      <ol class="challenge-stages" aria-label="Engineering challenge structure">
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>01</span><span>Problem</span></p>
+            <h3>Failure mode</h3>
+            <p class="challenge-stage-description">Frame the observable engine problem, the constraints around it, and why the straightforward approach was not sufficient.</p>
+            <p class="challenge-stage-result"><span>Question to answer</span>What exactly was failing, and under which conditions did it become visible or expensive?</p>
+          </div>
+        </li>
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>02</span><span>Iteration</span></p>
+            <h3>First approach</h3>
+            <p class="challenge-stage-description">Show the first implementation or optimisation, what it improved, and the limitation or new problem that remained.</p>
+            <p class="challenge-stage-result"><span>Question to answer</span>Why did the first fix help, and what evidence showed that it was still incomplete?</p>
+          </div>
+        </li>
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>03</span><span>Resolution</span></p>
+            <h3>Final design</h3>
+            <p class="challenge-stage-description">Explain the final system, the reasoning behind the design, and how the result was validated in the engine or a playable project.</p>
+            <p class="challenge-stage-result"><span>Question to answer</span>What changed in the final design, and why was that trade-off the right one for this engine?</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="challenge-summary">
+        <h3>Conclusion + trade-off</h3>
+        <p>Close the case study with the observable result, then state the cost clearly — whether that is CPU/GPU time, memory, implementation complexity, tooling overhead, or maintainability.</p>
+      </div>
     </section>
 
     <section class="case-related" aria-labelledby="built-with-title">
