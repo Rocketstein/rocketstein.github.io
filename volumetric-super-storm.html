@@ -12,7 +12,7 @@
   <title>Volumetric Super Storm — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260912-4">
+  <link rel="stylesheet" href="project.css?v=20260913-1">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -78,6 +78,37 @@
           <span>03</span>
           <h3>Painted flow maps</h3>
           <p>Built a three-layer workflow that encodes painted wind direction and strength in RGBA data to drive cloud-noise motion.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="case-pipeline" aria-labelledby="pipeline-title">
+      <div class="case-section-heading">
+        <div>
+          <h2 id="pipeline-title">Technical Pipeline</h2>
+          <p class="case-section-copy">The tooling separates artist authoring from runtime evaluation: editor-authored profiles, flow maps, and presets are stored as reusable assets, then consumed by the storm actor to drive cloud-material parameters at runtime.</p>
+        </div>
+      </div>
+      <ol class="case-pipeline-flow" aria-label="Volumetric Super Storm authoring and runtime pipeline">
+        <li>
+          <span>01</span>
+          <strong>Editor Tooling</strong>
+          <small>Vertical Profile &amp; Flow Map editors</small>
+        </li>
+        <li>
+          <span>02</span>
+          <strong>Reusable Assets</strong>
+          <small>Profiles, flow maps &amp; storm presets</small>
+        </li>
+        <li>
+          <span>03</span>
+          <strong>Runtime Actor</strong>
+          <small>Applies authored storm configuration</small>
+        </li>
+        <li>
+          <span>04</span>
+          <strong>Cloud Rendering</strong>
+          <small>Material parameters drive Volumetric Cloud</small>
         </li>
       </ol>
     </section>
