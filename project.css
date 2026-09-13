@@ -434,6 +434,23 @@ body.page-project::before {
   height: auto;
 }
 
+.challenge-stages--gtl .challenge-stage-image {
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+}
+
+.challenge-stages--gtl .challenge-stage-image > img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.challenge-stages--gtl .challenge-stage-image--alpha {
+  box-sizing: border-box;
+  padding: 10px 12px 26px;
+}
+
 .challenge-stage-visual figcaption {
   display: flex;
   min-height: 64px;
@@ -470,6 +487,35 @@ body.page-project::before {
   color: var(--muted);
   font-size: .91rem;
   line-height: 1.72;
+}
+
+@media (min-width: 1001px) {
+  .challenge-stages--gtl {
+    grid-template-rows: repeat(5, auto);
+    column-gap: 14px;
+    row-gap: 0;
+  }
+
+  .challenge-stages--gtl > .challenge-stage {
+    display: grid;
+    grid-row: 1 / span 5;
+    grid-template-rows: subgrid;
+  }
+
+  .challenge-stages--gtl > .challenge-stage > .challenge-stage-visual {
+    grid-row: 1;
+  }
+
+  .challenge-stages--gtl > .challenge-stage > .challenge-stage-copy {
+    display: grid;
+    grid-row: 2 / span 4;
+    grid-template-rows: subgrid;
+  }
+
+  .challenge-stages--gtl .challenge-stage-copy > p.challenge-stage-result {
+    min-block-size: 0;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 1000px) {
