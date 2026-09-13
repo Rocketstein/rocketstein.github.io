@@ -12,7 +12,7 @@
   <title>Volumetric Super Storm — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260913-2">
+  <link rel="stylesheet" href="project.css?v=20260913-3">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -117,49 +117,59 @@
       <div class="case-section-heading">
         <div>
           <p class="case-label">Engineering challenge</p>
-          <h2 id="challenge-title">Hiding noise-wrap discontinuities</h2>
-          <p class="case-section-copy">Long-running cloud motion eventually needs its scrolling noise offset to wrap. Resetting a single offset directly creates a visible pop in the volumetric density field, so I used a dual-phase sampling scheme to hide that reset.</p>
+          <h2 id="challenge-title">Seamless long-running noise motion</h2>
+          <p class="case-section-copy">Keeping procedural cloud motion continuous over a long-running session took three iterations: a smooth but unbounded offset, a bounded wrap that exposed a discontinuity, and finally two staggered phases that hide each other's resets.</p>
         </div>
       </div>
 
-      <div class="challenge-layout">
-        <div class="challenge-copy-grid">
-          <article>
-            <span>Problem</span>
-            <p>A continuously increasing sampling offset cannot run forever. Wrapping it back into range causes the sampled 3D noise field to jump between unrelated positions.</p>
-          </article>
-          <article>
-            <span>Approach</span>
-            <p>Sample two staggered offsets and crossfade their decoded LF and HF noise results. One phase can wrap while the other remains stable, keeping the visible density continuous.</p>
-          </article>
-          <article>
-            <span>Trade-off</span>
-            <p>The transition costs an additional set of 3D noise samples, trading some shader work for seamless long-running motion without a visible reset.</p>
-          </article>
-        </div>
+      <ol class="challenge-stages">
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>01</span><span>Baseline</span></p>
+            <h3>Continuous scrolling</h3>
+            <p>The first pass moved the 3D noise coordinates directly with time. Motion stayed smooth, but the sampling offset continued to grow without bound.</p>
+            <p class="challenge-stage-result"><span>Problem</span>Long-running sessions drive sampling into increasingly large coordinates, where floating-point precision degrades and a reset eventually becomes necessary.</p>
+          </div>
+          <figure class="challenge-stage-visual">
+            <img src="assets/images/noise-scroll-continuous.png" alt="A time-based flow equation above a graph whose sampling offset increases continuously." width="460" height="410" loading="lazy" decoding="async">
+            <figcaption>Time-scaled flow produces smooth motion but unbounded coordinates</figcaption>
+          </figure>
+        </li>
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>02</span><span>First fix</span></p>
+            <h3>Single-phase wrapping</h3>
+            <p>Applying <code>frac(time)</code> keeps the phase bounded and repeats the sampling offset inside a fixed range.</p>
+            <p class="challenge-stage-result"><span>New problem</span>At every <code>1 → 0</code> wrap, the lookup jumps to an unrelated place in the 3D noise field. The sudden density change appears as a visible pop.</p>
+          </div>
+          <figure class="challenge-stage-visual">
+            <img src="assets/images/noise-scroll-single-phase.png" alt="A frac time equation above a sawtooth graph that repeatedly resets from the cap to zero." width="580" height="388" loading="lazy" decoding="async">
+            <figcaption>frac(time) bounds the phase but introduces a hard reset</figcaption>
+          </figure>
+        </li>
+        <li class="challenge-stage">
+          <div class="challenge-stage-copy">
+            <p class="challenge-stage-kicker"><span>03</span><span>Final solution</span></p>
+            <h3>Staggered dual-phase blending</h3>
+            <p>Two phases separated by <code>0.5</code> are sampled together. Each phase decodes both the low- and high-frequency (LF/HF) noise, and the two phase results are blended with complementary triangular weights.</p>
+            <p class="challenge-stage-result"><span>Solution</span>When one phase reaches its wrap, the other carries the visible motion. The reset is hidden during the hand-off.</p>
+          </div>
+          <figure class="challenge-stage-visual">
+            <img src="assets/images/noise-scroll-dual-phase.png" alt="Equations for two staggered phases and complementary triangular weights above a graph of the two offset sawtooth phases." width="774" height="431" loading="lazy" decoding="async">
+            <figcaption>Two offset phases alternate influence across each wrap</figcaption>
+          </figure>
+        </li>
+      </ol>
 
-        <div class="phase-diagram" role="img" aria-label="Dual-phase noise scrolling: Phase A and Phase B overlap so one phase can fade out while the other remains continuous across a wrap point.">
-          <div class="phase-diagram-head">
-            <span>Dual-phase blend</span>
-            <small>one phase stays stable while the other wraps</small>
-          </div>
-          <div class="phase-row">
-            <span class="phase-name">A</span>
-            <div class="phase-track">
-              <i class="phase-line phase-a"></i>
-              <i class="phase-fade phase-fade-a"></i>
-              <b class="phase-wrap">wrap</b>
-            </div>
-          </div>
-          <div class="phase-row">
-            <span class="phase-name">B</span>
-            <div class="phase-track">
-              <i class="phase-line phase-b"></i>
-              <i class="phase-fade phase-fade-b"></i>
-            </div>
-          </div>
-          <div class="phase-blend-label">crossfade window</div>
-        </div>
+      <div class="challenge-summary" role="group" aria-label="Conclusion and trade-off">
+        <article>
+          <h3>Conclusion</h3>
+          <p>The dual-phase scheme removes visible reset pops and keeps long-running cloud motion continuous.</p>
+        </article>
+        <article>
+          <h3>Trade-off</h3>
+          <p>The scheme requires a second set of LF and HF 3D-noise samples, increasing shader cost in exchange for temporal continuity.</p>
+        </article>
       </div>
     </section>
   </main>
