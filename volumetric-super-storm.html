@@ -12,7 +12,7 @@
   <title>Volumetric Super Storm — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260913-1">
+  <link rel="stylesheet" href="project.css?v=20260913-2">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -111,6 +111,56 @@
           <small>Material parameters drive Volumetric Cloud</small>
         </li>
       </ol>
+    </section>
+
+    <section class="case-challenge" aria-labelledby="challenge-title">
+      <div class="case-section-heading">
+        <div>
+          <p class="case-label">Engineering challenge</p>
+          <h2 id="challenge-title">Hiding noise-wrap discontinuities</h2>
+          <p class="case-section-copy">Long-running cloud motion eventually needs its scrolling noise offset to wrap. Resetting a single offset directly creates a visible pop in the volumetric density field, so I used a dual-phase sampling scheme to hide that reset.</p>
+        </div>
+      </div>
+
+      <div class="challenge-layout">
+        <div class="challenge-copy-grid">
+          <article>
+            <span>Problem</span>
+            <p>A continuously increasing sampling offset cannot run forever. Wrapping it back into range causes the sampled 3D noise field to jump between unrelated positions.</p>
+          </article>
+          <article>
+            <span>Approach</span>
+            <p>Sample two staggered offsets and crossfade their decoded LF and HF noise results. One phase can wrap while the other remains stable, keeping the visible density continuous.</p>
+          </article>
+          <article>
+            <span>Trade-off</span>
+            <p>The transition costs an additional set of 3D noise samples, trading some shader work for seamless long-running motion without a visible reset.</p>
+          </article>
+        </div>
+
+        <div class="phase-diagram" role="img" aria-label="Dual-phase noise scrolling: Phase A and Phase B overlap so one phase can fade out while the other remains continuous across a wrap point.">
+          <div class="phase-diagram-head">
+            <span>Dual-phase blend</span>
+            <small>one phase stays stable while the other wraps</small>
+          </div>
+          <div class="phase-row">
+            <span class="phase-name">A</span>
+            <div class="phase-track">
+              <i class="phase-line phase-a"></i>
+              <i class="phase-fade phase-fade-a"></i>
+              <b class="phase-wrap">wrap</b>
+            </div>
+          </div>
+          <div class="phase-row">
+            <span class="phase-name">B</span>
+            <div class="phase-track">
+              <i class="phase-line phase-b"></i>
+              <i class="phase-fade phase-fade-b"></i>
+            </div>
+          </div>
+          <div class="phase-blend-label">crossfade window</div>
+        </div>
+      </div>
     </section>
   </main>
 
