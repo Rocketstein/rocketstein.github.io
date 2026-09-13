@@ -383,13 +383,17 @@ body.page-project::before {
   line-height: 1.68;
 }
 
+.challenge-stage-copy > p.challenge-stage-description {
+  margin-bottom: 20px;
+}
+
 .challenge-stage-copy code {
   color: var(--text);
   font: 650 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .challenge-stage-copy > p.challenge-stage-result {
-  min-block-size: 10rem;
+  min-block-size: 8.75rem;
   margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid var(--line);
@@ -475,6 +479,10 @@ body.page-project::before {
 
   .challenge-stage-copy h3 {
     min-height: 0;
+  }
+
+  .challenge-stage-copy > p.challenge-stage-description {
+    margin-bottom: 0;
   }
 
   .challenge-stage-copy > p.challenge-stage-result {
