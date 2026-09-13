@@ -91,6 +91,12 @@
 
       <ol class="challenge-stages" aria-label="Transparency sorting engineering challenge">
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image">
+              <img src="assets/images/gtl-alpha-blend-order.webp" alt="Red and blue translucent circles showing different overlap colours when their draw order is reversed" width="320" height="327" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <figcaption>Source-over alpha: reversing the draw order changes the accumulated overlap colour.</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>01</span><span>Problem</span></p>
             <h3>Alpha blending is not commutative</h3>
@@ -99,6 +105,12 @@
           </div>
         </li>
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image" style="background:#101827;">
+              <img src="assets/images/gtl-transparent-mesh-sort.webp" alt="GTL Engine scene comparing incorrect near-to-far translucent mesh order with correct far-to-near order" width="320" height="229" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <figcaption>Transparent meshes: near → far produces the wrong composite; far → near restores the expected result.</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>02</span><span>First fix</span></p>
             <h3>Sort transparent sections by camera depth</h3>
@@ -107,6 +119,12 @@
           </div>
         </li>
         <li class="challenge-stage">
+          <figure class="challenge-stage-visual">
+            <div class="challenge-stage-image" style="background:#101827;">
+              <img src="assets/images/gtl-particle-sort.webp" alt="GTL Engine particle test comparing unsorted alpha-blended particles with depth-sorted particles" width="320" height="255" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <figcaption>Particle test: per-view depth sorting restores the intended alpha-blended layering.</figcaption>
+          </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>03</span><span>Final solution</span></p>
             <h3>Sort at both particle and emitter level</h3>
