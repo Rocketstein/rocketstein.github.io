@@ -12,7 +12,7 @@
   <title>Volumetric Super Storm — Hyungjun Kim</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260912-2">
-  <link rel="stylesheet" href="project.css?v=20260913-5">
+  <link rel="stylesheet" href="project.css?v=20260913-6">
   <script src="script.js" defer></script>
 </head>
 <body class="page-project">
@@ -117,8 +117,8 @@
       <div class="case-section-heading">
         <div>
           <p class="case-label">Engineering challenge</p>
-          <h2 id="challenge-title">Seamless long-running noise motion</h2>
-          <p class="case-section-copy">Keeping procedural cloud motion continuous over a long-running session took three iterations: a smooth but unbounded offset, a bounded wrap that exposed a discontinuity, and finally two staggered phases that hide each other's resets.</p>
+          <h2 id="challenge-title">Continuous noise motion without reset pops</h2>
+          <p class="case-section-copy">The sampling strategy evolved in three steps: advance the noise offset continuously, wrap it into a fixed range, then crossfade two staggered phases so each reset occurs while its contribution is zero.</p>
         </div>
       </div>
 
@@ -128,13 +128,13 @@
             <div class="challenge-stage-image">
               <img src="assets/images/noise-scroll-continuous.png?v=20260913-2" alt="A time-based flow equation above a graph whose sampling offset increases continuously." width="1200" height="900" loading="lazy" decoding="async">
             </div>
-            <figcaption>Time-scaled flow produces smooth motion but unbounded coordinates</figcaption>
+            <figcaption>Continuous offset: smooth motion, unbounded coordinates</figcaption>
           </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>01</span><span>Baseline</span></p>
             <h3>Continuous scrolling</h3>
-            <p>The first pass moved the 3D noise coordinates directly with time. Motion stayed smooth, but the sampling offset continued to grow without bound.</p>
-            <p class="challenge-stage-result"><span>Problem</span>Long-running sessions drive sampling into increasingly large coordinates, where floating-point precision degrades and a reset eventually becomes necessary.</p>
+            <p class="challenge-stage-description">The initial approach advances the 3D noise-sampling offset with time. Motion stays smooth, but the coordinates grow indefinitely.</p>
+            <p class="challenge-stage-result"><span>Limitation</span>Over long runtimes, large sampling coordinates lose floating-point precision, making an eventual reset necessary.</p>
           </div>
         </li>
         <li class="challenge-stage">
@@ -142,13 +142,13 @@
             <div class="challenge-stage-image">
               <img src="assets/images/noise-scroll-single-phase.png" alt="A frac time equation above a sawtooth graph that repeatedly resets from the cap to zero." width="1200" height="900" loading="lazy" decoding="async">
             </div>
-            <figcaption>frac(time) bounds the phase but introduces a hard reset</figcaption>
+            <figcaption>Wrapped offset: bounded range, visible discontinuity</figcaption>
           </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>02</span><span>First fix</span></p>
             <h3>Single-phase wrapping</h3>
-            <p>Applying <code>frac(time)</code> keeps the phase bounded and repeats the sampling offset inside a fixed range.</p>
-            <p class="challenge-stage-result"><span>New problem</span>At every <code>1 → 0</code> wrap, the lookup jumps to an unrelated place in the 3D noise field. The sudden density change appears as a visible pop.</p>
+            <p class="challenge-stage-description">Applying <code>frac(time)</code> wraps the phase into a fixed range, keeping the time-varying sampling offset bounded over long runtimes.</p>
+            <p class="challenge-stage-result"><span>New artifact</span>At each <code>1 → 0</code> wrap, the sampling position jumps across the 3D noise field, causing an abrupt density change—a visible pop.</p>
           </div>
         </li>
         <li class="challenge-stage">
@@ -156,20 +156,20 @@
             <div class="challenge-stage-image">
               <img src="assets/images/noise-scroll-dual-phase.png" alt="Equations for two staggered phases and complementary triangular weights above a graph of the two offset sawtooth phases." width="1200" height="900" loading="lazy" decoding="async">
             </div>
-            <figcaption>Two offset phases alternate influence across each wrap</figcaption>
+            <figcaption>Staggered offsets: continuous motion across each wrap</figcaption>
           </figure>
           <div class="challenge-stage-copy">
             <p class="challenge-stage-kicker"><span>03</span><span>Final solution</span></p>
-            <h3>Staggered dual-phase blending</h3>
-            <p>Two phases separated by <code>0.5</code> each sample and decode the low- and high-frequency (LF/HF) noise, then blend the two results with complementary triangular weights.</p>
-            <p class="challenge-stage-result"><span>Solution</span>When one phase reaches its wrap, the other carries the visible motion. The reset is hidden during the hand-off.</p>
+            <h3>Dual-phase crossfade</h3>
+            <p class="challenge-stage-description">Two phases offset by <code>0.5</code> independently sample and decode the low- and high-frequency (LF/HF) noise, then crossfade the results with complementary triangular weights.</p>
+            <p class="challenge-stage-result"><span>Resolution</span>At each wrap, the wrapping phase has zero weight while the other carries the motion, hiding the discontinuity through the transition.</p>
           </div>
         </li>
       </ol>
 
       <div class="challenge-summary">
-        <h3>Conclusion + trade-off</h3>
-        <p>The dual-phase scheme keeps long-running cloud motion continuous without visible reset pops, at the cost of a second set of LF/HF 3D-noise samples.</p>
+        <h3>Outcome</h3>
+        <p>The dual-phase crossfade removes visible reset pops and preserves continuous cloud motion over long runtimes, at the cost of evaluating both LF and HF noise twice.</p>
       </div>
     </section>
   </main>
